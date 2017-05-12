@@ -3643,6 +3643,13 @@
 
 		}
 
+		.resume {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+
+
 /* Main */
 
 	#main > header {
@@ -3839,10 +3846,4 @@
 
 .profile-pic {
 	margin-left: 50px;
-}
-
-.resume {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
 }
