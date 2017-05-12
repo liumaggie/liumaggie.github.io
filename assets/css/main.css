@@ -1935,6 +1935,24 @@
 			color: #76ddff;
 		}
 
+.skills {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.skills > ul {
+	list-style: none;
+	display: flex;
+	align-items: center;
+}
+
+.skills > ul > li > img {
+	width: 150px;
+	margin-right: 20px;
+}
+
 /* Image */
 
 	.image {
@@ -3816,21 +3834,3 @@
 	body.is-mobile.landing #footer {
 		background-color: #1d242a;
 	}
-
-.skills {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-}
-
-.skills > ul {
-	list-style: none;
-	display: flex;
-	align-items: center;
-}
-
-.skills > ul > li > img {
-	width: 150px;
-	margin-right: 20px;
-}
