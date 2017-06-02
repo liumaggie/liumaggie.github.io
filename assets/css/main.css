@@ -2428,6 +2428,9 @@
 			}
 
 			@media screen and (max-width: 980px) {
+				.features li {
+					margin: 20px;
+				}
 
 					.features li:before {
 						left: 0;
@@ -2438,7 +2441,7 @@
 
 			}
 
-			@media screen and (max-width: 736px) {
+			@media screen and (max-width: 680px) {
 
 				.features li {
 					padding: 1em 0 1em 0 ;
