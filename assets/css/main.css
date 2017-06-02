@@ -1645,6 +1645,15 @@
 				margin: 0 0 2em 0;
 			}
 
+			.about-me {
+				display: flex;
+				flex-direction: column;
+			}
+
+			.about-me > img {
+				margin-right: 50px;
+			}
+
 		}
 
 	@media screen and (max-width: 980px) {
