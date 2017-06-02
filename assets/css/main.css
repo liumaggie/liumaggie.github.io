@@ -3767,3 +3767,8 @@
 .profile-pic {
 	margin-left: 50px;
 }
+
+.features > li > img {
+	width: 150px;
+	margin-right: 20px;
+}
