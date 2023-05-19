@@ -4,58 +4,32 @@ import Name from '../components/name.jsx'
 import Tabs from '../components/tabs.jsx'
 import '../styles/global.css';
 
-const headerStyles = {
-  fontSize: 40,
-  margin: 0
-}
 const pageContainerStyles = {
   display: "flex",
   flexDirection: "column",
   padding: 30
 }
+
 const innerPageStyles = {
   padding: "10%"
 }
+
 const pageStyles = {
   color: "#ffffff",
   backgroundColor: "#21293b",
   fontFamily: "-apple-system, Roboto, sans-serif, serif",
   height: "100%"
 }
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320,
-}
-const headingAccentStyles = {
-  color: "#663399",
-}
-const paragraphStyles = {
-  marginBottom: 48,
-}
-const codeStyles = {
-  color: "#8A6534",
-  padding: 4,
-  backgroundColor: "#FFF4DB",
-  fontSize: "1.25rem",
-  borderRadius: 4,
-}
+
 const listStyles = {
   display: "flex",
   paddingLeft: 0,
   listStyleType: "none",
   marginTop: 40
 }
+
 const listItemStyles = {
   marginRight: 20
-}
-
-
-const linkStyle = {
-  color: "#8954A8",
-  fontWeight: "bold",
-  fontSize: 16,
-  verticalAlign: "5%",
 }
 
 const IndexPage = () => {
@@ -66,23 +40,23 @@ const IndexPage = () => {
         <div style={innerPageStyles}>
           <h3>HELLO WORLD</h3>
           <Name />
-          <p style={descriptionStyles}>
+          <p>
             Software Developer. NYC. CMU. a/A alum. Meural@Netgear. Impact. Travel. Food. 
           </p>
           <ul style={listStyles}>
             <li style={listItemStyles}>
               <a target="_blank" href="mailto:mliu0805@gmail.com">
-                <StaticImage src="../images/mail-white.png" width={30} placeholder="blurred" />
+                <StaticImage alt='email' src="../images/mail-white.png" width={30} placeholder="blurred" />
               </a>
             </li>
             <li style={listItemStyles}>
               <a target="_blank" href="https://github.com/liumaggie">
-                <StaticImage src="../images/github-white.png" width={30} placeholder="blurred" />
+                <StaticImage alt='github' src="../images/github-white.png" width={30} placeholder="blurred" />
               </a>
               </li>
             <li style={listItemStyles}>
               <a target="_blank" href="https://www.linkedin.com/in/maggie-liu/">
-                <StaticImage src="../images/linkedin-white.png" width={30} placeholder="blurred" />
+                <StaticImage alt='linkedin' src="../images/linkedin-white.png" width={30} placeholder="blurred" />
               </a>
             </li>
           </ul>
