@@ -35,7 +35,7 @@ const listItemStyles = {
 const IndexPage = () => {
   return (
     <main style={pageStyles}>
-      <title>Home Page</title>
+      <title>Maggie Liu</title>
       <div style={pageContainerStyles}>
         <div style={innerPageStyles}>
           <h3>HELLO WORLD</h3>
