@@ -1,10 +1,10 @@
 import * as React from "react"
 
 const blackStyles = {
-  color: "#ffffff",
+  color: "#8198eb",
 }
 const whiteStyles = {
-  color: "#21293b"
+  color: "#ebedf2"
 }
 
 const headerStyles = {
@@ -39,7 +39,7 @@ export default class Name extends React.Component {
       <h1 style={headerStyles}>
         {
           this.state.letters.map((letter, idx) => {
-            return <span style={this.state.currIdx >= idx ? blackStyles : whiteStyles}>{letter}</span>
+            return <span key={idx} style={this.state.currIdx >= idx ? blackStyles : whiteStyles}>{letter}</span>
           })
         }
       </h1>
