@@ -1,4 +1,5 @@
 import * as React from "react"
+import { useState, useEffect } from "react"
 
 const blackStyles = {
   color: "#8198eb",
@@ -13,36 +14,28 @@ const headerStyles = {
   marginBottom: 25
 }
 
-export default class Name extends React.Component {
-  constructor (props) {
-    super(props)
+export default function Name () {
+  const letters = "i'm maggie".split("")
+  const [currIdx, setCurrIdx] = useState(0)
 
-    this.state = {
-      letters: "i'm maggie".split(""),
-      currIdx: 0
-    }
-    this.animate = this.animate.bind(this)
-  }
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (currIdx === letters.length) {
+        clearInterval(interval)
+      } else {
+        setCurrIdx(currIdx + 1)
+      }
+    }, 200)
+    return () => clearInterval(interval)
+  })
 
-  componentDidMount () {
-    setInterval(this.animate, 200)
-  }
-
-  animate () {
-    if (this.state.currIdx === this.state.letters.length) return
-
-    this.setState({ currIdx: this.state.currIdx + 1 })
-  }
-
-  render () {
-    return (
-      <h1 style={headerStyles}>
-        {
-          this.state.letters.map((letter, idx) => {
-            return <span key={idx} style={this.state.currIdx >= idx ? blackStyles : whiteStyles}>{letter}</span>
-          })
-        }
-      </h1>
-    )
-  }
+  return (
+    <h1 style={headerStyles}>
+      {
+        letters.map((letter, idx) => {
+          return <span key={idx} style={currIdx >= idx ? blackStyles : whiteStyles}>{letter}</span>
+        })
+      }
+    </h1>
+  )
 }
