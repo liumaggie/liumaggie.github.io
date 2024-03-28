@@ -37,8 +37,7 @@ const listItemStyles = {
 
 const listImageStyles = {
   width: 30,
-  placeholder: 'blurred',
-  style: { opacity: 0.5 }
+  placeholder: 'blurred'
 }
 
 const ListItem = (props) => {

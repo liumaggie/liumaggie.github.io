@@ -16,3 +16,12 @@ main {
   justify-content: center;
   align-items: center;
 }
+
+a {
+  opacity: 0.5;
+  transition: 0.4s
+}
+
+a:hover {
+  opacity: 0.7
+}
