@@ -1,7 +1,8 @@
+import '../styles/global.css'
 import * as React from "react"
 import { StaticImage } from "gatsby-plugin-image"
+import { StaticQuery, graphql  } from "gatsby"
 import Name from '../components/name.jsx'
-import '../styles/global.css';
 
 const pageContainerStyles = {
   display: "flex",
@@ -62,17 +63,31 @@ const IndexPage = () => {
           <p>Ex-Meural@Netgear. Carnegie Mellon & App Academy alum. </p>
           <p>I enjoy making impactful products & traveling the world. </p>
           <ul style={listStyles}>
+            <StaticQuery
+              query={graphql`
+                query {
+                  pdf: file(relativePath: { eq: "resume.pdf" }) {
+                    publicURL
+                  }
+                }
+              `}
+              render={(data) => (
+                <ListItem
+                  href={data.pdf.publicURL}
+                  image={<StaticImage alt="resume" src="../assets/resume.png" {...listImageStyles} />} />
+              )}
+            />
             <ListItem
               href="mailto:mliu0805@gmail.com"
-              image={<StaticImage alt='email' src="../images/mail.png" {...listImageStyles} />}
+              image={<StaticImage alt="email" src="../assets/mail.png" {...listImageStyles} />}
             />
             <ListItem
               href="https://github.com/liumaggie"
-              image={<StaticImage alt='github' src="../images/github-black.png" {...listImageStyles} />}
+              image={<StaticImage alt="github" src="../assets/github-black.png" {...listImageStyles} />}
             />
             <ListItem
               href="https://www.linkedin.com/in/maggie-liu/"
-              image={<StaticImage alt='linkedin' src="../images/linkedin.png"  {...listImageStyles} />}
+              image={<StaticImage alt="linkedin" src="../assets/linkedin.png"  {...listImageStyles} />}
             />
           </ul>
         </div>
