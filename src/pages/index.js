@@ -59,7 +59,7 @@ const IndexPage = () => {
         <div style={innerPageStyles}>
           <h3>HELLO WORLD</h3>
           <Name />
-          <p>Software Developer from NYC, looking for new opportunities in Singapore/Asia. </p>
+          <p>Software Developer from NYC. </p>
           <p>Ex-Meural@Netgear. Carnegie Mellon & App Academy alum. </p>
           <p>I enjoy making impactful products & traveling the world. </p>
           <ul style={listStyles}>
