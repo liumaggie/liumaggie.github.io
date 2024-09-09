@@ -1,22 +1,26 @@
+import '../styles/global.css'
 import * as React from "react"
 import { StaticImage } from "gatsby-plugin-image"
+import { StaticQuery, graphql  } from "gatsby"
 import Name from '../components/name.jsx'
-import Tabs from '../components/tabs.jsx'
-import '../styles/global.css';
 
 const pageContainerStyles = {
   display: "flex",
   flexDirection: "column",
-  padding: 30
+  padding: 30,
+  width: "100%",
+  maxWidth: "750px"
 }
 
 const innerPageStyles = {
-  padding: "10%"
+  padding: "10%",
+  backgroundColor: "#ebedf2",
+  borderRadius: "20px",
 }
 
 const pageStyles = {
-  color: "#ffffff",
-  backgroundColor: "#21293b",
+  color: "#7F8083",
+  backgroundColor: "#ffffff",
   fontFamily: "-apple-system, Roboto, sans-serif, serif",
   height: "100%"
 }
@@ -32,6 +36,21 @@ const listItemStyles = {
   marginRight: 20
 }
 
+const listImageStyles = {
+  width: 30,
+  placeholder: 'blurred'
+}
+
+const ListItem = (props) => {
+  return (
+    <li style={listItemStyles}>
+      <a target="_blank" rel="noreferrer" href={props.href}>
+        {props.image}
+      </a>
+  </li>
+  )
+}
+
 const IndexPage = () => {
   return (
     <main style={pageStyles}>
@@ -40,25 +59,36 @@ const IndexPage = () => {
         <div style={innerPageStyles}>
           <h3>HELLO WORLD</h3>
           <Name />
-          <p>
-            Software Developer. NYC. CMU. a/A alum. Meural@Netgear. Impact. Travel. Food. 
-          </p>
+          <p>Software Developer from NYC. </p>
+          <p>Ex-Meural@Netgear. Carnegie Mellon & App Academy alum. </p>
+          <p>I enjoy making impactful products & traveling the world. </p>
           <ul style={listStyles}>
-            <li style={listItemStyles}>
-              <a target="_blank" href="mailto:mliu0805@gmail.com">
-                <StaticImage alt='email' src="../images/mail-white.png" width={30} placeholder="blurred" />
-              </a>
-            </li>
-            <li style={listItemStyles}>
-              <a target="_blank" href="https://github.com/liumaggie">
-                <StaticImage alt='github' src="../images/github-white.png" width={30} placeholder="blurred" />
-              </a>
-              </li>
-            <li style={listItemStyles}>
-              <a target="_blank" href="https://www.linkedin.com/in/maggie-liu/">
-                <StaticImage alt='linkedin' src="../images/linkedin-white.png" width={30} placeholder="blurred" />
-              </a>
-            </li>
+            <StaticQuery
+              query={graphql`
+                query {
+                  pdf: file(relativePath: { eq: "resume.pdf" }) {
+                    publicURL
+                  }
+                }
+              `}
+              render={(data) => (
+                <ListItem
+                  href={data.pdf.publicURL}
+                  image={<StaticImage alt="resume" src="../assets/resume.png" {...listImageStyles} />} />
+              )}
+            />
+            <ListItem
+              href="mailto:mliu0805@gmail.com"
+              image={<StaticImage alt="email" src="../assets/mail.png" {...listImageStyles} />}
+            />
+            <ListItem
+              href="https://github.com/liumaggie"
+              image={<StaticImage alt="github" src="../assets/github-black.png" {...listImageStyles} />}
+            />
+            <ListItem
+              href="https://www.linkedin.com/in/maggie-liu/"
+              image={<StaticImage alt="linkedin" src="../assets/linkedin.png"  {...listImageStyles} />}
+            />
           </ul>
         </div>
       </div>
