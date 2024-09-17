@@ -1,7 +1,6 @@
 import '../styles/global.css'
 import * as React from "react"
 import { StaticImage } from "gatsby-plugin-image"
-import { StaticQuery, graphql  } from "gatsby"
 import Name from '../components/name.jsx'
 
 const pageContainerStyles = {
@@ -63,20 +62,6 @@ const IndexPage = () => {
           <p>Ex-Meural@Netgear. Carnegie Mellon & App Academy alum. </p>
           <p>I enjoy making impactful products & traveling the world. </p>
           <ul style={listStyles}>
-            <StaticQuery
-              query={graphql`
-                query {
-                  pdf: file(relativePath: { eq: "resume.pdf" }) {
-                    publicURL
-                  }
-                }
-              `}
-              render={(data) => (
-                <ListItem
-                  href={data.pdf.publicURL}
-                  image={<StaticImage alt="resume" src="../assets/resume.png" {...listImageStyles} />} />
-              )}
-            />
             <ListItem
               href="mailto:mliu0805@gmail.com"
               image={<StaticImage alt="email" src="../assets/mail.png" {...listImageStyles} />}
